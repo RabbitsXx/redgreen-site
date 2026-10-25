@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว · นายแดงนายเขียว</title>
+<meta name="description" content="นโยบายความเป็นส่วนตัวของแอปเผยแพร่คลิปสั้น ช่องนายแดงนายเขียว">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="top">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="brand">นายแดงนายเขียว<small>NAI DAENG NAI KHIAO</small></span>
+  </header>
+
+  <h1>นโยบายความเป็นส่วนตัว</h1>
+  <p class="lead">มีผลตั้งแต่ 25 ตุลาคม 2026 · ใช้กับแอปเผยแพร่คลิปสั้นของช่อง “นายแดงนายเขียว”</p>
+
+  <h2>1. ขอบเขตของแอป</h2>
+  <p>แอปนี้เป็นเครื่องมือภายใน ใช้งานโดยผู้ดูแลช่องเพียงคนเดียว บนคอมพิวเตอร์ส่วนตัว เพื่ออัปโหลดคลิปที่เราสร้างขึ้นเองไปยังบัญชีโซเชียลมีเดียของเราเอง (YouTube, Facebook, Instagram, TikTok) แอปไม่มีผู้ใช้ทั่วไป ไม่มีหน้าสมัครสมาชิก และไม่มีพื้นที่เก็บข้อมูลผู้ชม</p>
+
+  <h2>2. ข้อมูลที่แอปเข้าถึง</h2>
+  <ul>
+    <li><strong>ข้อมูลการอนุญาต (OAuth)</strong> — เมื่อผู้ดูแลช่องกดอนุญาตให้แอปโพสต์ แพลตฟอร์มจะออกโทเคนให้ (YouTube, Meta, TikTok) เราเก็บโทเคนเหล่านี้ไว้<strong>ในเครื่องเดียว</strong> ที่โฟลเดอร์ <code>state/secrets/</code> เพื่อใช้เรียก API แทนการล็อกอินซ้ำ</li>
+    <li><strong>ข้อมูลบัญชีขั้นต่ำ</strong> — รหัสเพจ Facebook, รหัสบัญชี Instagram และรหัสผู้ใช้ TikTok ที่จำเป็นต่อการระบุปลายทางการโพสต์</li>
+    <li><strong>ไฟล์วิดีโอและคำบรรยาย</strong> — คลิปและข้อความที่เราเป็นเจ้าของ ใช้เฉพาะส่งขึ้นแพลตฟอร์มปลายทาง</li>
+  </ul>
+  <p>เรา<strong>ไม่</strong>เก็บชื่อ อีเมล เบอร์โทร หรือข้อมูลส่วนบุคคลของผู้ชม และ<strong>ไม่</strong>อ่านข้อความ กล่องคอมเมนต์ หรือรายชื่อผู้ติดตามของบัญชีใด</p>
+
+  <h2>3. วัตถุประสงค์การใช้ข้อมูล</h2>
+  <p>ใช้เพื่อ (ก) อัปโหลด/ตั้งเวลาโพสต์คลิปของเราเอง (ข) ตรวจสถานะการเผยแพร่และสถิติพื้นฐานของโพสต์ของเราเอง และ (ค) แสดงสถานะการเชื่อมบัญชีในหน้าควบคุมภายในเครื่อง</p>
+
+  <h2>4. การเปิดเผยข้อมูลต่อบุคคลที่สาม</h2>
+  <p>แอปส่งข้อมูลเท่าที่จำเป็นไปยังแพลตฟอร์มที่คุณเชื่อมไว้โดยตรง ได้แก่ Google (YouTube Data API), Meta Platforms (Graph API) และ TikTok (Content Posting API) ตามนโยบายของแต่ละแพลตฟอร์ม เราไม่มีเซิร์ฟเวอร์กลาง ไม่ส่งข้อมูลไปยังบุคคลที่สามรายอื่น และไม่ขายหรือให้เช่าข้อมูล</p>
+
+  <h2>5. การจัดเก็บและความปลอดภัย</h2>
+  <ul>
+    <li>โทเคนและรหัสแอปเก็บในเครื่องผู้ดูแลช่อง ไฟล์เหล่านี้ถูกกีดกันจาก Git (ไม่ถูกอัปขึ้นที่จัดเก็บโค้ดสาธารณะ)</li>
+    <li>หน้าควบคุมฟังเฉพาะ <code>127.0.0.1</code> (เครื่องเดียวกัน) ไม่เปิดให้เข้าจากอินเทอร์เน็ต และมีโทเคนป้องกันคำสั่งข้ามเว็บ</li>
+    <li>ไม่มีการส่งข้อมูลไปยังระบบวิเคราะห์ของเราเอง ไม่มีคุกกี้เพื่อการโฆษณา</li>
+  </ul>
+
+  <h2>6. ระยะเวลาการเก็บ</h2>
+  <p>โทเคนจะถูกเก็บไว้จนกว่าจะตัดการเชื่อมต่อจากหน้าแอป หรือถูกเพิกถอนจากหน้าตั้งค่าความปลอดภัยของแพลตฟอร์มนั้น ไฟล์วิดีโอที่ประมวลผลแล้วจะถูกลบเมื่อพ้นรอบการเผยแพร่ตามที่ผู้ดูแลกำหนด</p>
+
+  <h2>7. สิทธิของคุณ</h2>
+  <p>คุณสามารถเพิกถอนสิทธิ์การเข้าถึงได้ทุกเมื่อที่หน้าการตั้งค่าของแต่ละแพลตฟอร์ม:</p>
+  <ul>
+    <li>Google: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a></li>
+    <li>Meta: <a href="https://www.facebook.com/settings?tab=applications">facebook.com/settings → Apps and Websites</a></li>
+    <li>TikTok: TikTok → Settings → Security → Manage app permissions</li>
+  </ul>
+  <p>เมื่อเพิกถอนแล้ว แอปจะโพสต์แทนคุณไม่ได้อีก จนกว่าจะเชื่อมใหม่</p>
+
+  <h2>8. เด็ก</h2>
+  <p>แอปนี้ไม่ใช่บริการสำหรับเด็ก และไม่ได้มุ่งเก็บข้อมูลจากเด็กโดยเจตนา</p>
+
+  <h2>9. การเปลี่ยนแปลงนโยบาย</h2>
+  <p>หากมีการแก้ไขสาระสำคัญ เราจะปรับวันที่ “มีผลตั้งแต่” ด้านบนของหน้านี้</p>
+
+  <h2>10. ติดต่อ</h2>
+  <p>ช่องทางติดต่อ: <a href="https://www.facebook.com/1335360219650342" rel="noopener">เพจ Facebook “นายแดงนายเขียว คลิปสั้นให้ความรู้” (ส่งข้อความถึงเพจ)</a></p>
+
+  <section class="en">
+    <h2>Privacy Policy (English)</h2>
+    <p>This is an internal, single-operator tool used by the “Nai Daeng Nai Khiao” channel to publish our own
+    short videos to our own YouTube, Facebook, Instagram and TikTok accounts through each platform's official API.
+    It stores OAuth tokens only on the operator's own computer; it does not collect viewer data, does not use
+    advertising cookies, and does not share data with any third party beyond the platforms the operator connects.
+    Access can be revoked at any time from each platform's app-permission settings. Contact:
+    <a href="https://www.facebook.com/1335360219650342" rel="noopener">our Facebook page “นายแดงนายเขียว คลิปสั้นให้ความรู้” (send the page a message)</a>.</p>
+  </section>
+
+  <nav class="links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="terms.html">ข้อกำหนดการใช้งาน</a>
+  </nav>
+
+  <footer><p>นายแดงนายเขียว · ปรับปรุงล่าสุด 25 ตุลาคม 2026</p></footer>
+</main>
+</body>
+</html>
